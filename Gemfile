@@ -4,6 +4,7 @@ gem 'rails', '3.2.13'
 gem 'sorcery'
 gem 'simple_form'
 gem 'fullcontact'
+gem 'sendgrid'
 
 group :production do 
   gem 'pg'

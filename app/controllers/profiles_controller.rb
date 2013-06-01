@@ -5,6 +5,9 @@ class ProfilesController < ApplicationController
     profile.tutor = false if params[:tutor] == "false"
     FullContactService.get_attributes_for_person(profile)
     if profile.save
+
+      Notifier.signup_email(profile).deliver
+      
       redirect_to root_path, notice: "check your email to activate your account"
     else
       redirect_to root_path, notice:"Sorry we got an error"
