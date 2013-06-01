@@ -7,3 +7,22 @@
 <% end %>
 
 <p> or <%= link_to "create account", new_user_path %></p>
+
+
+
+<%= form_tag("/submit_email", :method => 'post') do %>
+  <div class="field">
+    <%= label_tag("Student") %>
+    <%= radio_button_tag :tutor, false, :default=>"selected" %>
+    <%= label_tag("Tutor") %>
+    <%= radio_button_tag :tutor, true  %>
+  </div>
+  <div class="field">
+    <%= label_tag :email %><br />
+    <%= text_field_tag :email %>
+  </div>
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>
+

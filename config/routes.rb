@@ -8,7 +8,7 @@ Tutorgrapeapi::Application.routes.draw do
   get 'home' => 'dashboard#home', :as => 'home'
 
   get 'signup' => 'users#new', :as => 'create_account'
-
+  post 'submit_email' => 'profiles#submit', :as => 'submit'
   
   root :to => 'dashboard#home'
   resources :users
