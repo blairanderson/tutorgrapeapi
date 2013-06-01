@@ -1,0 +1,7 @@
+<% if current_user %>
+<p><%= current_user.username%></p>
+<p><%= current_user.email%></p>
+<%= link_to 'Logout', logout_path%>
+<% else %>
+<%= link_to 'Login', login_path %>
+<% end %>
