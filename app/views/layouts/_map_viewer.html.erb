@@ -1,0 +1,23 @@
+
+  <link rel="stylesheet" type="text/css" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/esri/css/esri.css">
+  <style>
+    #mapDiv{
+      padding:0;
+      margin:0;
+      height:100%;
+      border:1px solid black;
+    }
+    #legendDiv{
+      background-color: #fff;
+      position: absolute !important;
+      z-index: 99;
+      top:10px;
+      right:20px;
+    }
+  </style>
+
+<script>var dojoConfig = { parseOnLoad:true };</script>
+<script type="text/javascript" src="http://serverapi.arcgisonline.com/jsapi/arcgis/3.5compact/"></script>
+<%= javascript_include_tag "map" %>
+<div id="mapDiv"></div>
+<div id="legendDiv"></div>
