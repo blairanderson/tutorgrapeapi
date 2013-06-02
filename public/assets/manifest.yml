@@ -83,8 +83,8 @@ squairy_light@2X.png: squairy_light@2X-54f3a1acd759a6113437893a57da3a40.png
 squairy_light@2X/index.png: squairy_light@2X-54f3a1acd759a6113437893a57da3a40.png
 application.js: application-42cb3a5a53bf3aea50f811c8794b42da.js
 application/index.js: application-42cb3a5a53bf3aea50f811c8794b42da.js
-application.css: application-356551de44102a1634a9f5566fe2095c.css
-application/index.css: application-356551de44102a1634a9f5566fe2095c.css
+application.css: application-a6e7f2f0479bae923beadd980a7e2f7b.css
+application/index.css: application-a6e7f2f0479bae923beadd980a7e2f7b.css
 jquery.min.map: jquery.min-8b58c0fbf303b938d8e749262f7e50dd.map
 jquery/index.min.map: jquery.min-8b58c0fbf303b938d8e749262f7e50dd.map
 _firebug/errorIcon.png: _firebug/errorIcon-c4d01c944712a4c9433cf3eed071a4a6.png
