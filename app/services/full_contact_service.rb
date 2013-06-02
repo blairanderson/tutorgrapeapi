@@ -14,7 +14,7 @@ class FullContactService
 
     p.first_name   = self.first_name(fcd, "first name here")
     p.last_name    = self.last_name(fcd, "last name here")
-    p.photo        = self.photo(fcd, "default_photo.png")
+    p.photo        = self.photo(fcd)
     p.corporation  = self.org(fcd, "Where are you working?")
     p.job_title    = self.title(fcd, "Job Title?")
     p.location     = self.location(fcd, "Please Enter Location")
@@ -37,11 +37,11 @@ class FullContactService
   end
 
 
-  def self.photo(full_contact_details, default_value)
+  def self.photo(full_contact_details)
    begin
       full_contact_details.photos.first.url
     rescue
-      default_value
+      "http://www.gravatar.com/avatar/00000000000000000"
     end 
   end
 
