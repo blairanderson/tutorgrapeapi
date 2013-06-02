@@ -2,7 +2,7 @@ class Notifier < ActionMailer::Base
   include SendGrid
 
   
-  default :from => "TutorGrape@tutorgrape.com"
+  default :from => "welcome@tutorgrape.com"
 
   def signup_email(profile)
     if Rails.env.production?

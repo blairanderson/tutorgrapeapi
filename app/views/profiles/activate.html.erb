@@ -11,8 +11,8 @@
   <%= f.input :location %>
   <%= f.input :photo, label: "Photo_url" %>
 
-  <%= hidden_field_tag "user[username]", :value => @profile.best_name if @profile %>
-  <%= hidden_field_tag "user[email]", :value => @profile.email if @profile %>
+  <%= hidden_field_tag "user[username]", @profile.best_name if @profile %>
+  <%= hidden_field_tag "user[email]", @profile.email if @profile %>
   <div class="field">
     <%= label_tag "password" %>
     <%= password_field_tag "user[password]" %>
@@ -23,3 +23,4 @@
   </div>
   <%= f.button :submit %>
 <% end %>
+
