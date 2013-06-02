@@ -403,14 +403,30 @@ img {
   display: block;
   margin: 0 auto; }
 
-.navigation-obj, .app-body-obj {
+html, .navigation-obj {
   background: RGB(131, 229, 137); }
 
 .navigation-obj {
   border-bottom: 0.1875em solid RGB(21, 76, 36); }
 
-html {
-  background: url("../img/squairy_light.png"); }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'museo_slab700'; }
+
+h3, .signup-area label, .signup-submit .submit {
+  font-family: 'museo_slab500'; }
+
+p {
+  font-family: "museo300"; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: RGB(21, 76, 36); }
+
+h1 {
+  font-size: 3.0875em;
+  margin-bottom: 0; }
+
+h3 {
+  font-size: 2.7075em; }
 
 .signup-section-obj {
   background: #5bad6c;
@@ -425,22 +441,34 @@ nav {
 .nav-login-form {
   text-align: right;
   width: 100%; }
+  .nav-login-form input {
+    text-indent: 8px;
+    color: RGBA(21, 76, 36, 0.2); }
+
+.login-button {
+  width: 110px;
+  color: RGB(21, 76, 36) !important; }
 
 .signup-area {
   margin-bottom: 1em; }
+
+.signup-copy {
+  text-align: center; }
+  .signup-copy h3 {
+    margin-top: 0; }
 
 .button-toggle {
   position: relative;
   display: block;
   line-height: 2.8em;
   background-color: RGB(155, 89, 182);
-  border-radius: 4px;
   color: #f0e7f4;
   font-size: 28.8px;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
-  text-shadow: 2px 2px 0 #522764;
+  text-shadow: 2px 2px 0 #582a6b;
+  box-shadow: 3px 3px 0 #522764;
   -webkit-transition: all 400ms ease-in-out;
   -moz-transition: all 400ms ease-in-out;
   transition: all 400ms ease-in-out; }
@@ -453,9 +481,12 @@ nav {
     left: 0;
     cursor: pointer;
     opacity: 0; }
+  .button-toggle:hover {
+    background-color: #7f3d9b; }
   .button-toggle.red {
-    background-color: #27ae60;
-    text-shadow: 2px 2px 0 #19703e; }
+    background-color: #f39c12;
+    text-shadow: 2px 2px 0 #a16608;
+    box-shadow: 3px 3px 0 #7f5006; }
     .button-toggle.red:after {
       content: "check";
       color: white;
@@ -540,6 +571,12 @@ nav {
       background-color: #27ae60;
       text-shadow: 2px 2px 0 #19703e; }
 
+.footer-copy {
+  text-align: center; }
+
+p {
+  color: RGB(21, 76, 36); }
+
 .button-toggle-outer {
   width: 50%; }
 
@@ -551,20 +588,28 @@ img {
   margin: 2.375em 0; }
 
 .email-bar .email {
-  text-indent: 90px; }
+  text-indent: 25px; }
 
 .app-body-obj {
   height: 100%; }
 
 .tg-app-icon {
-  width: 23.75em; }
+  width: 17.1em;
+  text-align: center;
+  margin-bottom: 4.75em; }
   .tg-app-icon img {
-    width: 14.25em;
-    margin: 0 auto;
-    padding: 4.75em 0; }
+    margin: 0;
+    padding: 3.325em 0 0 0; }
+  .tg-app-icon a {
+    color: RGB(21, 76, 36);
+    text-decoration: none; }
 
 .sign-up-feature {
-  width: 33.25em; }
+  width: 38em;
+  margin-top: 2.375em;
+  margin-left: 0.95em; }
+  .sign-up-feature p {
+    line-height: 20px; }
 
 .signup-submit {
   text-align: left; }
@@ -573,6 +618,17 @@ img {
   display: block;
   height: 3.75em; }
 
+.signup-submit .submit {
+  background-color: RGB(155, 89, 182);
+  color: white;
+  font-size: 25px;
+  text-shadow: 2px 2px 0 #582a6b;
+  -webkit-transition: all 400ms ease-in-out;
+  -moz-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out; }
+  .signup-submit .submit:hover {
+    background-color: #7f3d9b; }
+
 .field {
   padding: 0;
   margin: 0; }
@@ -580,29 +636,43 @@ img {
 .signup-submit .field {
   display: block;
   float: left;
-  width: 90%; }
+  width: 85%; }
   .signup-submit .field .email {
     width: 100%;
     border: 0;
-    padding: 0; }
+    padding: 0;
+    height: 4em;
+    color: #7f8c8d;
+    font-size: 20px; }
 
 .signup-submit .actions {
   display: block;
   float: left;
-  width: 10%; }
+  width: 15%; }
   .signup-submit .actions .submit {
     width: 100%;
     border: 0;
-    padding: 0; }
+    padding: 0;
+    height: 3.2em; }
 
 .logo-cell {
   width: 19em; }
+  .logo-cell img {
+    width: 70%;
+    margin-top: 5px; }
 
 .login-list-cell {
   width: 38em; }
 
 .login-cell {
   width: 38em; }
+  .login-cell input {
+    background-color: RGBA(21, 76, 36, 0.2);
+    -webkit-appearance: value;
+    -moz-appearance: value;
+    appearance: value;
+    border: none;
+    padding: 10px 0; }
   .login-cell li {
     display: inline-block; }
 

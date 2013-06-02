@@ -1,36 +1,5 @@
-
-
-<!-- NAVIGATION OBJECT-->
-<div class="navigation-obj" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
-     xmlns="http://www.w3.org/1999/html">
-  <div class="wrapper">
-    <div class="grid">
-
-      <!-- logo -->
-      <div class="grid__cell logo-cell">
-        <h1>{{ logo here }}</h1>
-      </div>
-
-      <!-- login -->
-      <div class="grid__cell login-cell">
-        <%= form_tag("/create_session", :method => "post", :class => "nav-login-form") do %>
-        <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="XqlmQEn5MumQZKjNCaBQBhYh4mpKjYnkRZqsgJa+ViI="></div>
-
-            <ul>
-                <li><%= email_field_tag(:email, 'email') %></li>
-                <li><%= password_field_tag(:password, 'password') %></li>
-                <li><%= submit_tag('Login!') %> </li>
-            </ul>
-
-        <%end%>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- APPLICATION BODY OBJECT -->
-  <div class="app-body-obj">
+  <!-- APPLICATION BODY OBJECT -->
+  
 
     <div class="header-feature-img">
       <!-- <img src="http://lorempixel.com/output/city-q-c-1011-381-3.jpg" /> -->
@@ -47,13 +16,16 @@
           <!-- submit -->
 
           <div class="grid__cell tg-app-icon">
-            <%=  image_tag('feature_icon.svg') %>
+            <%= image_tag "feature_icon.svg" %>
+            <a href="">Add to your Homescreen</a>
           </div>
 
           <div class="grid__cell sign-up-feature">
             <!-- sign-up-feature-obj -->
-            <h1>Cool Fuckin App</h1>
-            <p>Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <h1>Connect. Learn. Grow.</h1>
+            <p>Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes..</p>
+
+            <p>Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
 
           </div>
 
@@ -72,24 +44,11 @@
     <div class="wrapper">
       <div class="grid">
         <!-- SIGN UP FORM OBJ -->
-          <div class="grid__cell">
-            <h1>FUCK ME!</h1>
+          <div class="grid__cell signup-copy">
+            <h3>Learn from people in your community.</h3>
           </div>
-
-          <!-- Signup Form -->
-
-
-
-
-
-
           <%= form_tag("/submit_email", :method => 'post') do %>
-            <div style="margin:0;padding:0;display:inline">
-              <input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="XqlmQEn5MumQZKjNCaBQBhYh4mpKjYnkRZqsgJa+ViI=">
-            </div>
-
             <div class="field signup-area">
-
               <div class="grid__cell button-toggle-outer">
                 <div class="button-toggle ss-icon">
                   <%= label_tag("Student", nil, :class => 'signup-select-btn') %>
@@ -101,20 +60,18 @@
                 <div class="button-toggle ss-icon">
                   <%= label_tag("Tutor", nil, :class => 'signup-select-btn') %>
                   <%= radio_button_tag :tutor, true, true, :id => 'tutor_false'  %>
-
                 </div>
               </div>
-
             </div>
-
 
             <div class="grid__cell signup-submit">
               <div class="grid">
               <div class="grid__cell email-bar">
 
               <div class="field">
-                <%= text_field_tag :email, 'email', :class => 'email'%>
-              </div><div class="actions">
+                <%= email_field_tag :email, nil , placeholder: "email" ,class: "email"%>
+              </div>
+              <div class="actions">
                 <%= submit_tag 'Submit', :class => 'submit' %>
               </div>
 
@@ -129,25 +86,3 @@
       </div>
     </div>
   </div>
-
-  <!-- FOOTER OBJECT -->
-  <div class="footer-obj">
-    <div class="wrapper">
-      <div class="grid">
-
-        <div class="grid__cell">
-          <h2>{{ FOOTER GOES HERE }}</h2>
-        </div>
-
-      </div>
-    </div>
-  </div>
-  <!-- FOOTER OBJECT END -->
-
-  <div class="grid-overlay"></div>
-
-  <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-  <script>
-    window.jQuery || document.write('<script src="jquery-2.0.2.js"><\/script>')
-  </script>
-<%= javascript_include_tag  "scripts", "modernizr-2.6.1.min"%>
