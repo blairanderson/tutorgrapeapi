@@ -1,7 +1,11 @@
+
+
 dojo.require("esri.map");
 dojo.require("esri.arcgis.utils");
 dojo.require("esri.dijit.Legend");
-alert('Loading...');
+dojo.require("esri.dijit.Popup");
+dojo.require("esri.layers.FeatureLayer");
+
 var map;
 
 function init(){
@@ -18,6 +22,9 @@ function init(){
 
   },function(error){alert ('Failed to load map');
       console.log("Error loading webmap: " & dojo.toJson(error));});
-}
+
+};
+
 
 dojo.ready(init);
+

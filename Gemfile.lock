@@ -45,6 +45,8 @@ GEM
       execjs
     coffee-script-source (1.6.2)
     debug_inspector (0.0.2)
+    dojo-rails (0.14.0)
+      rails (>= 3.1.12)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -150,6 +152,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   coffee-rails (~> 3.2.1)
+  dojo-rails
   fullcontact
   jquery-rails
   pg

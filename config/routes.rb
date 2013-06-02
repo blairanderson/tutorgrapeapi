@@ -11,8 +11,13 @@ Tutorgrapeapi::Application.routes.draw do
   post 'submit_email' => 'profiles#submit', :as => 'submit'
 
   get 'activate/:activation_key' => 'profiles#activate', :as => "activation"
-  
+
+  get 'map' => 'viewers#map'
+
+
+
   root :to => 'dashboard#home'
   resources :users
   resources :profiles
+
 end

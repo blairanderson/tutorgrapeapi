@@ -1,28 +1,153 @@
-<%= form_tag("/create_session", :method => "post") do %>
-  <%= label_tag(:email, "email") %>
-  <%= email_field_tag(:email) %></br>
-  <%= label_tag(:password, "password") %>
-  <%= password_field_tag(:password) %></br>
-  <%= submit_tag('Login!') %>
-<% end %>
-
-<p> or <%= link_to "create account", new_user_path %></p>
 
 
+<!-- NAVIGATION OBJECT-->
+<div class="navigation-obj" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+     xmlns="http://www.w3.org/1999/html">
+  <div class="wrapper">
+    <div class="grid">
 
-<%= form_tag("/submit_email", :method => 'post') do %>
-  <div class="field">
-    <%= label_tag("Student") %>
-    <%= radio_button_tag :tutor, false, :default=>"selected" %>
-    <%= label_tag("Tutor") %>
-    <%= radio_button_tag :tutor, true  %>
+      <!-- logo -->
+      <div class="grid__cell logo-cell">
+        <h1>{{ logo here }}</h1>
+      </div>
+
+      <!-- login -->
+      <div class="grid__cell login-cell">
+        <%= form_tag("/create_session", :method => "post", :class => "nav-login-form") do %>
+        <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="XqlmQEn5MumQZKjNCaBQBhYh4mpKjYnkRZqsgJa+ViI="></div>
+
+            <ul>
+                <li><%= email_field_tag(:email, 'email') %></li>
+                <li><%= password_field_tag(:password, 'password') %></li>
+                <li><%= submit_tag('Login!') %> </li>
+            </ul>
+
+        <%end%>
+      </div>
+
+    </div>
   </div>
-  <div class="field">
-    <%= label_tag :email %><br />
-    <%= text_field_tag :email %>
-  </div>
-  <div class="actions">
-    <%= submit_tag %>
-  </div>
-<% end %>
+</div>
 
+<!-- APPLICATION BODY OBJECT -->
+  <div class="app-body-obj">
+
+    <div class="header-feature-img">
+      <!-- <img src="http://lorempixel.com/output/city-q-c-1011-381-3.jpg" /> -->
+    </div>
+
+    <div class="wrapper">
+      <div class="grid">
+
+        <!-- app icon cell-->
+        <!-- copy -->
+        <!-- button1 -->
+        <!-- button2 -->
+        <!-- email -->
+          <!-- submit -->
+
+          <div class="grid__cell tg-app-icon">
+            <%=  image_tag('feature_icon.svg') %>
+          </div>
+
+          <div class="grid__cell sign-up-feature">
+            <!-- sign-up-feature-obj -->
+            <h1>Cool Fuckin App</h1>
+            <p>Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+          </div>
+
+        <!-- HEADER OBJ -->
+        <!-- <div class="grid__cell"> -->
+          <!-- <img src="http://lorempixel.com/output/city-q-c-1011-381-3.jpg" /> -->
+        <!-- </div> -->
+        <!-- HEADER OBJ END -->
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="signup-section-obj">
+    <div class="wrapper">
+      <div class="grid">
+        <!-- SIGN UP FORM OBJ -->
+          <div class="grid__cell">
+            <h1>FUCK ME!</h1>
+          </div>
+
+          <!-- Signup Form -->
+
+
+
+
+
+
+          <%= form_tag("/submit_email", :method => 'post') do %>
+            <div style="margin:0;padding:0;display:inline">
+              <input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="XqlmQEn5MumQZKjNCaBQBhYh4mpKjYnkRZqsgJa+ViI=">
+            </div>
+
+            <div class="field signup-area">
+
+              <div class="grid__cell button-toggle-outer">
+                <div class="button-toggle ss-icon">
+                  <%= label_tag("Student", nil, :class => 'signup-select-btn') %>
+                  <%= radio_button_tag :tutor, false, true, :id =>'tutor_false', :default=>"selected" %>
+                </div>
+              </div>
+
+              <div class="grid__cell button-toggle-outer">
+                <div class="button-toggle ss-icon">
+                  <%= label_tag("Tutor", nil, :class => 'signup-select-btn') %>
+                  <%= radio_button_tag :tutor, true, true, :id => 'tutor_false'  %>
+
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="grid__cell signup-submit">
+              <div class="grid">
+              <div class="grid__cell email-bar">
+
+              <div class="field">
+                <%= text_field_tag :email, 'email', :class => 'email'%>
+              </div><div class="actions">
+                <%= submit_tag 'Submit', :class => 'submit' %>
+              </div>
+
+              </div>
+
+              </div>
+            </div>
+          <%end%>
+          <!-- Signup Form End-->
+
+        <!-- SIGN UP FORM OBJ END-->
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER OBJECT -->
+  <div class="footer-obj">
+    <div class="wrapper">
+      <div class="grid">
+
+        <div class="grid__cell">
+          <h2>{{ FOOTER GOES HERE }}</h2>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- FOOTER OBJECT END -->
+
+  <div class="grid-overlay"></div>
+
+  <script src="http//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+  <script>
+    window.jQuery || document.write('<script src="jquery-2.0.2.js"><\/script>')
+  </script>
+<%= javascript_include_tag  "scripts.min", "modernizr-2.6.1.min"%>
