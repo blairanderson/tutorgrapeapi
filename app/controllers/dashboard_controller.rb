@@ -11,4 +11,8 @@ class DashboardController < ApplicationController
       redirect_to login_path
     end
   end
+
+  def finder
+    
+  end
 end

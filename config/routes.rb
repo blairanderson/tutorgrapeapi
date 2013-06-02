@@ -1,6 +1,6 @@
 Tutorgrapeapi::Application.routes.draw do
   get 'login' => 'user_sessions#new', :as => 'login'
-
+  get 'finder'=> 'dashboard#finder', :as => 'finder'
   post 'create_session' => 'user_sessions#create', :as => 'login_user'
   
   get 'logout' => 'user_sessions#destroy', :as => 'logout'
@@ -14,7 +14,8 @@ Tutorgrapeapi::Application.routes.draw do
 
   get 'map' => 'viewers#map'
 
-
+  post 'subjects' => 'profiles#subjects', :as => "subjects"  
+  delete 'subjects' => 'profiles#remove_subjects', :as => "remove_subjects"  
 
   root :to => 'dashboard#home'
   resources :users

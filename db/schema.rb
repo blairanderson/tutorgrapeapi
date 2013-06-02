@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130601211529) do
+ActiveRecord::Schema.define(:version => 20130602050324) do
 
   create_table "profiles", :force => true do |t|
     t.string   "first_name"
@@ -32,6 +32,40 @@ ActiveRecord::Schema.define(:version => 20130601211529) do
   end
 
   add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
+
+  create_table "requests", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "requester_id"
+    t.integer  "subject_id"
+    t.integer  "state"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "requests", ["requester_id"], :name => "index_requests_on_requester_id"
+  add_index "requests", ["state"], :name => "index_requests_on_state"
+  add_index "requests", ["subject_id"], :name => "index_requests_on_subject_id"
+  add_index "requests", ["user_id"], :name => "index_requests_on_user_id"
+
+  create_table "subject_users", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "subject_id"
+    t.integer  "level"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "subject_users", ["level"], :name => "index_subject_users_on_level"
+  add_index "subject_users", ["subject_id"], :name => "index_subject_users_on_subject_id"
+  add_index "subject_users", ["user_id"], :name => "index_subject_users_on_user_id"
+
+  create_table "subjects", :force => true do |t|
+    t.string   "topic"
+    t.string   "sub_topic"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username",         :null => false

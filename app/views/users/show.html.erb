@@ -1,10 +1,22 @@
-<%= @user.inspect %>
-<%= @user.profile.inspect %>
+<% if @user.profile.tutor == true %>
+<%= link_to "Find Students", root_path %>
+<% else %>
+<%= link_to "Find Mentors", root_path %>
+<% end %>
+<p>topics you've selected</p>
+<table>
+<% @user.subjects.each do |subject| %>
+  <tr>
+    <td><%= subject.topic %></td>
+    <td><%= subject.level %></td>
+    <td><%= subject.sub_topic %></td>
+    <td><%= link_to "X",'#'%></td>
+  </tr>
+<% end %>
+</table>
 
-<p>Find mentors</p>
-
-Show form to select subjects
-
-<%# @user.subjects.each do |subject| %>
-  <%# subject.inspect %>
-<%# end %>
+<%= form_tag('/subjects') do %>
+<%= select_tag("subjects", grouped_options_for_select( Subject.topics ))%>
+<%= select_tag( "level", options_for_select(Subject.level_legend) ) %>
+<%= submit_tag "Save Subject" %>
+<% end %>
