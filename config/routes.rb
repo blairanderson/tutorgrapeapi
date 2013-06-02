@@ -9,7 +9,10 @@ Tutorgrapeapi::Application.routes.draw do
 
   get 'signup' => 'users#new', :as => 'create_account'
   post 'submit_email' => 'profiles#submit', :as => 'submit'
+
+  get 'activate/:activation_key' => 'profiles#activate', :as => "activation"
   
   root :to => 'dashboard#home'
   resources :users
+  resources :profiles
 end
