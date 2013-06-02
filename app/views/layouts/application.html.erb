@@ -11,13 +11,12 @@
 </head>
 <body>
 
-<% if flash.notice %>
-  <h1>I'm a notice<%= flash.notice %></h1>
-<% end %>
 
 
 <%= render 'layouts/logged_in_header' %>
-<%= render 'layouts/map_viewer' %>
+<% if flash.notice %>
+  <p class="notice"><%= flash.notice %></p>
+<% end %>
 <%= yield %>
 
 </body>

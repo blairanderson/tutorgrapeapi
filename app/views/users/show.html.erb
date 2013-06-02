@@ -1,0 +1,10 @@
+<%= @user.inspect %>
+<%= @user.profile.inspect %>
+
+<p>Find mentors</p>
+
+Show form to select subjects
+
+<% @user.subjects.each do |subject| %>
+  <%= subject.inspect %>
+<% end %>

@@ -1,0 +1,26 @@
+<%= image_tag(@profile.photo || "http://www.gravatar.com/avatar/00000000000000000") %>
+
+<%= simple_form_for(@profile) do |f| %>
+  <%= f.input :tutor %>
+  <%= f.input :email %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :age %>
+  <%= f.input :corporation %>
+  <%= f.input :job_title %>
+  <%= f.input :location %>
+  <%= f.input :photo, label: "Photo_url" %>
+
+  <%= hidden_field_tag "user[username]", @profile.best_name if @profile %>
+  <%= hidden_field_tag "user[email]", @profile.email if @profile %>
+  <div class="field">
+    <%= label_tag "password" %>
+    <%= password_field_tag "user[password]" %>
+  </div>
+  <div class="field">
+    <%= label_tag "password confirmation" %>
+    <%= password_field_tag 'user[password_confirmation]' %>
+  </div>
+  <%= f.button :submit %>
+<% end %>
+
