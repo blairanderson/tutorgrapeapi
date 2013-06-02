@@ -1,0 +1,7 @@
+These are all the tutors
+
+<% User.tutors.each do |user| %>
+  <%= user.inspect %>
+<% end %>
+
+<%= current_user.tutors %>

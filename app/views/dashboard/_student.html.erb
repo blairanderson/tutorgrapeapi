@@ -1,0 +1,9 @@
+Find a tutor
+
+These are all the students
+
+<% User.students.each do |user| %>
+  <%= user.inspect %>
+<% end %>
+
+<%= current_user.students %>

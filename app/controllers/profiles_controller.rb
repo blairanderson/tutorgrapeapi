@@ -1,5 +1,19 @@
 class ProfilesController < ApplicationController
   
+  def subjects
+    sub_topic = params[:subjects]
+    subject = Subject.find_by_sub_topic(sub_topic)
+    current_user.subjects << subject
+    current_user.subject_users.where(subject_id: subject.id, user_id: current_user.id).each do |subject_user|
+      subject_user.update_attributes(level: params[:level].to_i)
+    end
+    redirect_to user_path(current_user), notice: "#{sub_topic} added"
+  end
+
+  def remove_subjects
+    
+  end
+
   def submit
     profile = Profile.new(email: params[:email])
     profile.tutor = true if params[:tutor] == "true"

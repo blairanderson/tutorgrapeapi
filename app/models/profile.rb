@@ -5,6 +5,7 @@ class Profile < ActiveRecord::Base
   before_create :generate_activation_key
   validates_uniqueness_of :activation_key
 
+  
   def best_name
     "#{first_name} #{last_name}" || first_name || last_name || email
   end

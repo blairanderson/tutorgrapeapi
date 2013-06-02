@@ -1,7 +1,8 @@
-<h1>Dashboard#home</h1>
-<p>Find me in app/views/dashboard/home.html.erb</p>
+<p><%= link_to "Update Topics of Interest", user_path(@user) %></p>
+<p>Tutor:<%= @user.profile.tutor %></p>
 
-
-<h1> this will be our logged in dashboard page</h1>
-
-
+<% if @user.profile.tutor == true %>
+  <%= render "student" %>
+<% else %>
+  <%= render "tutor" %>
+<% end %>
